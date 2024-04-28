@@ -102,7 +102,7 @@ BinaryExpression := Expression Op Expression |
 
 Op := MathOp | CompareOp | AndOrOp
 MathOp := "+" | "-" | "*" | "/"
-AndOrOp := "&" | "|"
+AndOrOp := "&" | "AND" | "|" | "OR"
 CompareOp := "=" | "!=" | "^=" | "~=" | ">" | ">=" | "<" | "<="
 
 FunctionCall := FunctionName "(" FuncArgs ")" |
@@ -146,7 +146,13 @@ To concate more expressions you can use `&` and `|` operator:
 ```
 select * where key in ("k1", "k2", "k3") & value ~= "^prefix[0-9]+"
 
+# can also use and keyword
+select * where key in ("k1", "k2", "k3") and value ~= "^prefix[0-9]+"
+
 select * where key ^= "key" | value ^= "val"
+
+# can also use or keyword
+select * where key ^= "key" or value ^= "val"
 ```
 
 And then is using field name in filter expression, that will save some characters for SQL writer.

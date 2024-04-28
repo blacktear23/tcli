@@ -44,7 +44,7 @@ BinaryExpression ::= Expression Operator Expression |
 
 Operator ::= MathOperator | CompareOperator | AndOrOperator
 
-AndOrOperator ::= "&" | "|"
+AndOrOperator ::= "&" | "AND" | "|" | "OR"
 
 MathOperator ::= "+" | "-" | "*" | "/"
 

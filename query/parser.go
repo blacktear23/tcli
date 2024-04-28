@@ -262,7 +262,7 @@ func (p *Parser) parseBetween(pos int, oprec int) (Expression, error) {
 	if err != nil {
 		return nil, err
 	}
-	err = p.expect(&Token{Tp: NAME, Data: "and"})
+	err = p.expect(&Token{Tp: OPERATOR, Data: "and"})
 	if err != nil {
 		return nil, err
 	}
